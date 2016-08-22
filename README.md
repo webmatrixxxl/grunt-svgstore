@@ -257,7 +257,6 @@ grunt.initConfig({
 .css {
   background-image: url('dest/dest.svg#filename')
 }
-});
 ```
 
 #### options.includeTitleElement (since 0.5.0)
