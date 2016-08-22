@@ -97,6 +97,8 @@ module.exports = function (grunt) {
         $resultSvg.attr(attr, options.svg[attr]);
       }
 
+      $resultSvg.append('<style>svg.sprite-svg{display:none}svg.sprite-svg:target{display:block}</style>');
+
       file.src.filter(function (filepath) {
         if (!grunt.file.exists(filepath)) {
           grunt.log.warn('File "' + filepath + '" not found.');
@@ -238,8 +240,8 @@ module.exports = function (grunt) {
         title = title || id;
 
         // Generate symbol
-        var $res = cheerio.load('<symbol>' + $svg.html() + '</symbol>', { xmlMode: true });
-        var $symbol = $res('symbol').first();
+        var $res = cheerio.load('<svg>' + $svg.html() + '</svg>', { xmlMode: true });
+        var $symbol = $res('svg').first();
 
         // Merge in symbol attributes from option
         for (var attr in options.symbol) {
