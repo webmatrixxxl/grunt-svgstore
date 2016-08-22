@@ -251,6 +251,14 @@ grunt.initConfig({
   },
 });
 ```
+### Use as CSS background:
+
+```css
+.css {
+  background-image: url('dest/dest.svg#filename')
+}
+});
+```
 
 #### options.includeTitleElement (since 0.5.0)
 Type: `Boolean`
